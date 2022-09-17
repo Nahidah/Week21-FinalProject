@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <title>RESUME GENERATOR</title>
+</head>
+
+<body>
+    <!-- here goes the html code -->
+    <form>
+
+        <div class="container" id="cv-form">
+            <h1 class="text-center my-2">Resume generator</h1>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <!--first col-->
+                    <h3>Personal information</h3>
+
+                    <div class="form-group mt-2">
+                        <label for="nameField">Name</label>
+                        <input type="text" id="nameField" placeholder="Enter here" class="form-control" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="nameField1">First Name</label>
+                        <input type="text" id="nameField1" placeholder="Enter here" class="form-control" />
+                    </div>
+
+
+                    <div class="form-group mt-2">
+                        <label for="contactField">Your contact</label>
+                        <input type="text" id="contactField" placeholder="Enter here" class="form-control" />
+                    </div>
+
+
+                    <div class="form-group mt-2">
+                        <label for="addressField">Your Address</label>
+                        <textarea id="addressField" placeholder="Enter here" class="form-control" rows="3"></textarea>
+                    </div>
+
+
+                    <div class="form-group mt-3">
+                        <label for="">Select your resume picture</label>
+                        <input id="imgField" type="file" class="form-control">
+                    </div>
+
+                    <p class="text-secondary my-3">Important Links</p>
+
+                    <div class="form-group mt-2">
+                        <label for="fbField">Facebook</label>
+                        <input type="text" id="fbField" placeholder="Enter here" class="form-control" />
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="instaField">Instagram</label>
+                        <input type="text" id="instaField" placeholder="Enter here" class="form-control" />
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="linkField">Linkedln</label>
+                        <input type="text" id="linkedField" placeholder="Enter here" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <!--second col-->
+                    <h3>Professional Information</h3>
+
+                    <div class="form-group mt-2">
+                        <label for="">Objectives</label>
+                        <textarea id="objectiveField" rows="5" placeholder="Enter here" class="form-control">
+                        </textarea>
+                    </div>
+
+                    <div class="form-group mt-2 " id="we">
+                        <label for="">Work Experience</label>
+                        <textarea placeholder="Enter here" class="form-control weField " rows="3"></textarea>
+
+                        <!--new text area-->
+
+                        <!--add button-->
+                        <div class="container text-center mt-2" id="weAddButton">
+                            <button onclick="addNewWEField()" class="btn btn-primary btn-sm">
+                                Add
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!--Academic qualifications-->
+                    <div class="form-group mt-2" id="aqAddButton">
+                        <label for="">Academic Qualification</label>
+                        <textarea placeholder="Enter here" class="form-control eqField" rows="5"></textarea>
+
+
+                        <div class="container text-center mt-2" id="aqAddButton">
+                            <button onclick="addNewAQField()" class="btn btn-primary btn-sm">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <div class="container text-center mt-3">
+                <input value=" Generate resume " type="submit" class="btn btn-primary btn-lg" />
+            </div>
+
+        </div>
+
+    </form>
+
+    <!--cv template-->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background2 ">
+                <!--first column-->
+
+
+                <!--IMAGE TO BE SET-->
+                <img src="images/defaultpic.jpg" alt=""
+                    class="img-fluid myimg " id="imgTemplate" 
+                />
+
+                <div class="container">
+                    <p id="nameT1">nahidah</p>
+                    <p id="contact">+230 57502028</p>
+                    <p id="address">E3,MORC, MHL, Beau Vallon, Mahebourg.</p>
+
+                    <hr />
+
+                    <p id="fbT"><a href="#1">https://www.facebook.com/BOLAKY NI</a></p>
+                    <p id="instaT"><a href="#1">https://www.instagram.com/nxh.xa</a></p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-8 py-5">
+                <!--second column-->
+                <h1 id="nameT2" class="text-center" style="font-weight: 980">
+                    Bibi Nahidah Bolaky
+                </h1>
+
+                <!--objective card-->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Placeat consequatur vitae repellendus, ipsam iusto quibusdam
+                            fugit amet non ipsum! Ad natus, nemo necessitatibus provident
+                            autem incidunt voluptatem aspernatur praesentium ea exercitationem
+                            consectetur facilis, est vero corrupti? Sapiente voluptatem, est sint
+                            quis quos ex ratione eos repellat nemo cupiditate veniam soluta!
+                        </p>
+                    </div>
+                </div>
+
+                <!--Work Experience-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>work experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="workExperienceT">
+                            <li>
+                                <p>Lorem ipsum dolor sit amet
+
+                                    consectetur adipisicing elit. Nihil, excepturi.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet
+
+                                    consectetur adipisicing elit. Nihil, excepturi.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet
+
+                                    consectetur adipisicing elit. Nihil, excepturi.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Academic Qualification-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>
+                                <p>Lorem ipsum dolor sit amet
+
+                                    consectetur adipisicing elit. Nihil, excepturi.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet
+
+                                    consectetur adipisicing elit. Nihil, excepturi.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet
+
+                                    consectetur adipisicing elit. Nihil, excepturi.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">
+                        Print resume
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+        </script>
+
+<!--    <script src="js/script.js"></script>-->
+
+    <script>
+
+        // alert("Loading");
+
+        function addNewWEField() {
+           // console.log("Adding New page");
+
+           let newNode=document.createElement('textarea');
+            newNode.classList.add('form-control');
+            newNode.classList.add('weField');
+            newNode.classList.add('mt-2');
+            newNode.setAttribute("rows",3);
+            newNode.setAttribute('placeholder','Enter here')
+
+            let weOb=document.getElementById('we');
+            let weAddButtonOb=document.getElementById('weAddButton');
+
+            weOb.insertBefore(newNode, weAddButtonOb);
+        }
+
+        function addNewAQField() {
+            let newNode=document.createElement('textarea');
+            newNode.classList.add('form-control');
+            newNode.classList.add('eqField');
+            newNode.classList.add('mt-2');
+            newNode.setAttribute("rows",3);
+            newNode.setAttribute('placeholder','Enter here')
+
+            let aqOb=document.getElementById('aq');
+            let aqAddButtonOb=document.getElementById('aqAddButton');
+
+            aqOb.insertBefore(newNode, aqAddButtonOb);
+        }
+
+        //generating cv
+        function generate(){
+            //generating cv
+            let nameField=document.getElementById("nameField").value;
+
+            let nameT1=document.getElementById("nameT1");
+
+            nameT1.innerHTML = nameField;
+
+            //direct
+            document.getElementById("nameT2").innerHTML = nameField;
+
+            //contact
+            document.getElementById("contactT").innerHTML =document.getElementById("contactField").value;
+
+            //address
+            document.getElementById("addressT").innerHTML = document.getElementbyId("addressfield").value;
+            document.getElementById("fb").innerHTML = document.getElementbyId("fbfield").value;
+            document.getElementById("instaT").innerHTML = document.getElementbyId("instafield").value;
+
+            //objective
+            objective.getElementById("objectiveT").innerHTML=document.getElementById("objectField").value;
+
+            //work experience
+            let wes=document.getElementByClassName("weField")
+
+            let str=''
+
+            for(let e of wes)
+            {
+                str=str+`<li> ${e.value} </li`;
+            }
+
+            document.getElementById("workExperience").innerHTML =str;
+
+            //aq
+            let aqs=document.getElementsByClassName('aqField')
+
+            let str1=''
+
+            for(let e of aqs) {
+                str1 += `<li> ${e.value} </li>`;
+            }
+
+            document.getElementById('aqT').innerHTML=str1;
+
+            //uploading image
+            let file=document.getElementById("imgField").files[0]
+            console/log(file);
+
+            let reader=new FileReader();
+
+            reader.readAsDataURL(file);
+            console.log(reader.result);
+
+            //setting image to template
+
+            reader.onloadend = function() {
+                document.getElementById("imgTemplate").src = reader.result;
+            }
+
+
+            document.getElementById("cv-form").style.display="none";
+            document.getElementById("cv-template").style.display= "block";
+
+        }
+
+         //printing resume
+        function printCV(){
+            window.print();
+        }
+
+    </script>
+
+</body>
+
+</html>
